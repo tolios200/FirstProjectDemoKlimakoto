@@ -1,0 +1,31 @@
+base_charge = 2.0      # πάγιο
+tax = 5                # φόρος (δηλώνεται στο πρωτότυπο αλλά δεν χρησιμοποιείται)
+vat_rate = 0.24        # ΦΠΑ
+
+units = int(input("Δώστε τις μονάδες νερού: "))
+
+if units <= 5:
+    unit_charge = 0.0 * units
+    unit_charge1 = 0.0 * units
+elif units <= 10:
+    unit_charge = 0.0 * 5 + (units - 5) * 0.5
+    unit_charge1 = 0.5 * units
+elif units <= 20:
+    unit_charge = 0.0 * 5 + 5 * 0.5 + (units - 10) * 0.7
+    unit_charge1 = 0.7 * units
+else:
+    unit_charge = 0.0 * 5 + 5 * 0.5 + 10 * 0.7 + (units - 20) * 1
+    unit_charge1 = 1 * units
+
+# Κλιμακωτή χρέωση
+total_charge = unit_charge + base_charge++tax
+vat = total_charge * vat_rate
+total_charge += vat
+
+# Μη κλιμακωτή χρέωση
+total_charge1 = unit_charge1 + base_charge+ tax
+vat = total_charge1 * vat_rate
+total_charge1 += vat
+
+print(f"Η τελική χρέωση κλιμακωτά είναι: {total_charge} ευρώ")
+print(f"Η τελική χρέωση μη κλιμακωτά είναι: {total_charge1} ευρώ")
