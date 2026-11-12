@@ -10,9 +10,14 @@ if units <= 5:
 elif units <= 10:
     unit_charge = 0.0 * 5 + (units - 5) * 0.5
     unit_charge1 = 0.5 * units
+#ALLAGH
+elif units <= 50:
+    unit_charge = 0.0 * 5 + 5 * 0.5 + (units - 20) * 0.7
+    unit_charge1 = 0.7 * units
 elif units <= 20:
     unit_charge = 0.0 * 5 + 5 * 0.5 + (units - 10) * 0.7
     unit_charge1 = 0.7 * units
+
 else:
     unit_charge = 0.0 * 5 + 5 * 0.5 + 10 * 0.7 + (units - 20) * 1
     unit_charge1 = 1 * units
